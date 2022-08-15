@@ -4,13 +4,13 @@ import { useState } from "react";
 
 const inputStyle={
   width:'90%',
-  padding:'10px',
+  padding:'8px',
   border:'1px solid #ccc',
   'border-radius':'4px',
   resize:'vertical'
 }
 const labelStyle={
-  padding:'10px 10px 10px 0',
+  padding:'5px 5px 5px 0',
   display: 'inline-block',
 }
 const submitStyle={
@@ -43,7 +43,7 @@ function IdCardForm() {
     }
     
     const saveForm = () => {
-      fetch('http://localhost:8004/poems', {
+      fetch('', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,6 @@ function IdCardForm() {
           <input style={inputStyle}
             onChange={handleChange} 
             value={form.first} 
-            
             name="first"
             type="text"
           />
@@ -81,7 +80,6 @@ function IdCardForm() {
           <input style={inputStyle}
             onChange={handleChange} 
             value={form.last} 
-            
             type="text"
             name="last"
           />
@@ -92,8 +90,8 @@ function IdCardForm() {
           <input style={inputStyle}
             onChange={handleChange} 
             value={form.city} 
-            
             type ="text"
+            name ="city"
             
           />
         </div>
@@ -103,7 +101,6 @@ function IdCardForm() {
           <input style={inputStyle}
             onChange={handleChange} 
             value={form.country} 
-            
             type ="text"
             name="country"
           />
@@ -114,7 +111,6 @@ function IdCardForm() {
           <input style={inputStyle}
             onChange={handleChange} 
             value={form.phone} 
-          
             type ="text"
             name="phone"
           />
