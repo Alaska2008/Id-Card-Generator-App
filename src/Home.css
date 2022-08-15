@@ -1,0 +1,81 @@
+.Home{
+   margin: 0;
+}
+.header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blue;
+    align-content: center;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    border-radius: 1rem;
+    margin: 0;
+    padding: 0;
+    border-top-color: orangered;
+}
+
+
+.search-box{
+    
+
+    outline: none;
+    width: 20%;
+    border: 1px solid grey;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color:orangered;
+    text-indent: 2rem;
+   
+}
+.sidebar{
+
+  width: 90%;
+  height: 100%;
+  border-right: solid black 1px;
+  background: #e5fdff;
+  padding: 1em;
+  margin-left: 0.5rem;
+  top: 0;
+}
+
+.idcard {
+   
+   display:grid;
+   grid-template-columns: 1fr 3fr;
+   row-gap: 1rem;
+}
+.sidebar > button {
+  
+  background-color: darkolivegreen;
+   color: whitesmoke;
+   height: 30px;
+    width: 90%;
+    padding: 10px,
+   
+ 
+  }
+  .search-box{
+   box-sizing: border-box;
+   width: 50%;
+   height: 30px;
+   border: 4px solid #7f85ff;
+   font-size: 20px;
+   font-weight: 600;
+   font-family: Roboto;
+   outline: 0;
+   margin-left: 40%;
+
+  }
+  @media screen and(max-width:600px) {
+    .sidebar, .cards-container, input[type=submit]
+    {
+        width:100%;
+        margin-top: 0;
+    }
+    
+  }
