@@ -21,7 +21,7 @@ const submitStyle={
   cursor:'pointer',
 
 }
-function IdCardForm() {
+function IdCardForm(props) {
     const [form, setForm] = useState({
       first : " ",
       last: "",
@@ -34,6 +34,7 @@ function IdCardForm() {
 
 
     });
+    
   
     function handleChange(event){
       
@@ -59,7 +60,8 @@ function IdCardForm() {
   
     function handleSubmit(event){
       event.preventDefault();
-      saveForm();
+      props.onSubmit(form)
+      //saveForm();
     }
   
     return (

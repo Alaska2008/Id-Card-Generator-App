@@ -22,10 +22,11 @@ function NavBar() {
             <NavLink to="/about" exact style={linkStyles} activeStyle={{ background: "darkblue",}} >
                 About
             </NavLink>
-
-            <NavLink to="/login" exact style={linkStyles} activeStyle={{ background: "darkblue",}} >
-                Login
-            </NavLink>
+            
+                <NavLink clas to="/login" exact style={linkStyles} activeStyle={{ background: "darkblue",}} >
+                    Login
+                </NavLink>
+            
       
         </div>
     );

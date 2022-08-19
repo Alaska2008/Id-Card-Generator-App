@@ -4,10 +4,7 @@ import './IdCard.css';
 
 
 const IdCard =({ userData }) =>{
-    
-    
-  
-
+    console.log(userData)
     return (
         <div className="card">
             <div className='header'>World Wide Unique Identity Card</div>

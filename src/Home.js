@@ -3,14 +3,16 @@ import { useState, useEffect } from 'react';
 import './Home.css';
 import React from "react";
 import IdCardForm from './IdCardForm.js';
+import InputedIdCard from './InputedIdCard.js';
 
 
 function Home(){
     const [users, setUsers] = useState([]);
-   const [allUsers, setAllUsers] = useState([]);
-   const [isOn, setIsOn] = useState(false);
+    const [allUsers, setAllUsers] = useState([]);
+    const [isOn, setIsOn] = useState(false);
+    const [inputData, setInputData] = useState('')
     
-  
+    
   useEffect(() => {
     fetch('https://randomuser.me/api/?results=12')
     .then((response) => response.json())
@@ -18,9 +20,9 @@ function Home(){
        setAllUsers(userData.results);   
        setUsers(userData.results);
        })
-        
-    
+   
   }, []);
+
  const filterCards = event => {
   const value =event.target.value.toLowerCase();
   const filteredUsers = allUsers.filter(
@@ -59,28 +61,35 @@ function Home(){
     function handleClick(){
         setIsOn((isOn) => !isOn)
     }
+    function getData(data){
+        setInputData(data)
+    }
+
+    console.log(inputData)
+    console.log(inputData)
     return (
         <div className="Home">
             
             <input className='search-box' placeholder='search ...' onInput = {filterCards}/>
             <br/>
-            <h1 className='header'>World Unique Identity Card</h1>
-            <br/>
             <div className='idcard'>
-                <div className="sidebar">
-                    <button onClick={handleClick} >Show/hide ID Card Form</button>
-                        {isOn ? <IdCardForm /> : null}
-                </div>
-           
-                
-    
-                <div className='cards-container'>
+                <div>
+                    <div className="sidebar">
+                        <button onClick={handleClick} >Show/hide ID Card Form</button>
+                            {isOn ? <IdCardForm  onSubmit= {getData} /> : null}
+                    </div>
+                    <br />
                     
-                    {users.map((user, index) =>(
-                        <IdCard userData={user} key={index} />
-                    ))
-                    }
-                
+                </div>
+                <div>
+                    <h1 className='header'>World Unique Identity Card</h1>
+                    <div className='cards-container'>
+                        {users.map((user, index) =>(
+                            <IdCard userData={user} key={index} />
+                        ))
+                        }
+                    
+                    </div>
                 </div>
             </div>
             {/* <div>

@@ -5,7 +5,16 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: blue;
     align-content: center;
+    margin-top: 0;
+    
 }
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: blue;
+  align-content: center;
+  margin-left: 12rem;
+}
+
 
 .cards-container{
     display: grid;
@@ -41,6 +50,7 @@
   padding: 1em;
   margin-left: 0.5rem;
   top: 0;
+  
 }
 
 .idcard {
@@ -69,13 +79,23 @@
    font-family: Roboto;
    outline: 0;
    margin-left: 40%;
+   margin-top: 2rem;
+   margin-bottom: 1rem;
 
   }
   @media screen and(max-width:600px) {
-    .sidebar, .cards-container, input[type=submit]
+     .cards-container 
     {
-        width:100%;
-        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+  }
+  @media screen and(max-width:800px) {
+    .sidebar
+    {
+        display:none;
     }
     
   }
